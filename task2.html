@@ -1,0 +1,50 @@
+<html >
+<head>
+   
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <form>
+            <h4>Form</h4>
+           
+           name: <input type="text" placeholder='Name' id="name"><br>
+           email: <input type="email" placeholder='Email' id="email"><br>
+          phone:  <input type="text" placeholder='phone' id="phone"><br>
+         gender:  <input type="radio" id="gender" value="female"/>female
+         <input type="radio" name="gender" id="gender" value="male"/>male<br></br>
+      hobbies:  <input type="checkbox"   id="hobbies" value="dancing"/>dancing
+        <input type="checkbox" id="hobbies" value="sleeping"/>Sleeping
+       <input type="checkbox"  id="hobbies" value="cricket"/>cricket
+       <input type="checkbox"  id="hobbies" value="singing"/>Singing<br></br>
+            <input id='btn' type="submit" placeholder='register' onclick="register(event)">
+        </form>
+        <p>Name: <span id="display_name"></span></p>
+        <p>Email: <span id="display_email"></span></p>
+        <p>phone: <span id="display_phone"></span></p>
+        <p>gender: <span id="display_gender"></span></p>
+     <p>hobbies: <span id="display_hobbies"></span></p>
+    </center>
+    <script>
+    const register = function (event) {
+   
+    let r_name = document.querySelector("#name").value;
+    let r_email = document.querySelector("#email").value;
+    let r_phone = document.querySelector("#phone").value;
+     let r_gender = document.querySelector("#gender").value;
+ 
+     let r_hobbies = document.querySelector("#hobbies").value;
+   
+
+    display_name.innerHTML = r_name;
+    display_email.innerHTML = r_email;
+display_phone.innerHTML = r_phone;
+display_gender.innerHTML = r_gender;
+display_hobbies.innerHTML = r_hobbies;
+
+
+    event.preventDefault();
+    }
+    </script>
+</body>

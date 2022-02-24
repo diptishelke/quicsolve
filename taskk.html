@@ -1,0 +1,21 @@
+<html>
+<head></head>
+<body>
+<div id="box"></div>
+<button id="call">send</button>
+<script>
+$(document).ready(function(){
+$("#call").click(function(){
+$.ajax({
+
+url:"https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8",
+success:function(result){
+$("#box").append(result);
+}
+});
+alert(123);
+});
+
+
+</body>
+</html>
