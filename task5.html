@@ -1,0 +1,40 @@
+<html>
+<head> <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<button id="call">send</button>
+<h1>TABLE</h1>
+<table id="data"border="2">
+<tr>
+<th>Name</th>
+<th>city</th>
+</tr>
+<script>
+$(document).ready(function(){
+
+$("#call").click(function(){
+alert(123);
+	$.ajax({
+
+		url:"https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8",
+		type:"GET",
+		datatype:"JSON",
+		success:function(result){
+		var i=0;
+		var html="";
+		for(x of result){
+			html+="<tr><td>"+x.name+"</td><td>"+x.city+"</td></tr>";
+		}
+
+
+			$("#data").append(html);
+		}
+	});
+
+});
+});
+</script>
+
+</body>
+</html>
