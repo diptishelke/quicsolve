@@ -20,7 +20,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-
+$data=mysqli_query($conn,$sql);
+$row=mysqli_fetch_assoc($data);
 
 ?><form method="post" action="sqlsubmit.php">
     <label>Firstname</label>
