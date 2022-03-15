@@ -1,0 +1,126 @@
+<html>
+<head>
+
+<style>
+
+div{
+
+width=300px;
+height=300px;
+border:10px solid red;
+text-align:center;
+float:right;
+
+margin:100px;
+padding:50px;
+}
+
+</style></head>
+
+<body>
+
+
+<h1>FORM</h1>
+Name: <input type="text" name="name" id="name"/><br/><br/>
+Email: <input type="text" name="email" id="email"/><br/><br/>
+phone :<input type="text" name="phone" id="phone"/><br/><br/>
+Gender :<input type="radio" name="gender" value="male"/>Male
+<input type="radio" name="gender" value="female"/>Female<br/><br/>
+Hobbies<input type="checkbox" name="hobbies" value="cricket"/>Cricket
+<input type="checkbox" name="hobbies" value="sleeping"/>Sleeping
+<input type="checkbox" name="hobbies" value="dancing"/>Dancing
+<input type="checkbox" name="hobbies" value="singing"/>Singing<br/><br/>
+Address: <textarea name="address"></textarea><br/><br/>
+Country:<select name="country">
+<option value="india">India</option>
+<option value="us">US</option>
+<option value="japan">Japan</option>
+<option value="germany">Jermany</option>
+</select><br/><br/>
+city:<select name="city">
+<option value="pune">pune</option>
+<option value="mumbai">mumbai</option>
+<option value="satara">satara</option>
+<option value="chennai">chennai</option>
+</select><br/><br/>
+pincode :<input type="text" name="pincode" id="pincode"/><br/><br/>
+<button value="submit" onclick="myfunction()"type="submit">submit
+</button>
+
+
+</form>
+
+<div id="col" >
+<p  id="box6">I am a Engineer</p>
+
+<button onclick="red()">click</button>
+</div>
+<div id="bol">
+<p  id="box5">I am a Engineer</p>
+
+<button onclick="blue()">click</button>
+
+
+</div>
+<div id="tol">
+<p  id="box4">I am a Engineer</p>
+<button onclick="pink()">click</button>
+
+</div>
+<div id="col2">
+<p id="box7">I am the future developer</p>
+
+<button onclick="orange()">start</button>
+</div>
+<script>
+function red(){
+document.getElementById("box6").style.color="red";
+document.getElementById("col").style.background="blue";
+}
+function blue(){
+document.getElementById("box5").style.color="blue";
+document.getElementById("bol").style.background="gray";
+}
+function pink(){
+document.getElementById("box4").style.color="pink";
+document.getElementById("tol").style.background="black";
+}
+
+function orange(){
+
+if(document.getElementById("box7").style.color="orange"){
+var box7="blue";
+}
+else{
+box7="black";
+}
+
+
+
+
+
+
+}
+
+
+
+</script>
+
+
+
+<p id ="demo"> </p>
+<script>
+
+var w=window.innerWidth;
+var h=window.innerHeight;
+var x=document.getElementById("demo");
+x.innerHTML="BROWSER INNER WINDOW WIDTH:"+ w +",HEIGHT:"+ h +".";
+
+
+
+
+
+</script>
+
+</body>
+</html>
