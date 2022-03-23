@@ -60,7 +60,7 @@ class RegisterController extends Controller
     $users=new user(); 
     $users->username =$request->username;
 
-   // $user=User::where('username','=',$request->username)->first();
+
 
    }
 
