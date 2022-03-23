@@ -1,0 +1,18 @@
+html, body { 
+  height: 100%; 
+}
+
+body { 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0; 
+}
+
+.main-container {
+  min-height: calc(93vh - 56px);
+}
+
+@media only screen and (min-width:991px) {
+  .main-container {
+      max-width: 95vw;
+  }    
+}

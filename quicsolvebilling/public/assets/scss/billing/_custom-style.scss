@@ -1,0 +1,368 @@
+.custom-table-list {
+    .dataTables_wrapper {
+       .dataTables_length {
+         select {
+             padding: 0.3rem 0.5rem;
+             border-radius: 0.25rem;
+             border: 1px solid rgba(72, 94, 144, 0.3);
+             min-width: 4.5rem;
+             margin: 0 0.75rem;
+         }
+       }
+       .dataTables_paginate {
+         .paginate_button {
+             padding: 0.15rem 0.25rem;
+             &.current {
+                    color: #fff !important;
+                    background-color: $color-brand-01;
+                    background: -webkit-gradient( linear, left top, left bottom, from($color-brand-01), to($color-brand-01));
+                    background: linear-gradient(to bottom, $color-brand-01 0%, $color-brand-01 100%);
+                    border-color: transparent;
+                    &:hover {
+                        color: #fff !important;
+                        background-color: $color-brand-01;
+                        background: -webkit-gradient( linear, left top, left bottom, from($color-brand-01), to($color-brand-01));
+                        background: linear-gradient(to bottom, $color-brand-01 0%, $color-brand-01 100%);
+                    }
+             }
+         }
+       }
+       .dataTables_processing {
+         color: #fff;
+         background-color: #16c4fa;
+         background: linear-gradient( to right, #4bc6ec40 0%, $color-brand-01 25%, $color-brand-01 75%, #4bc6ec40 100%);
+         height: 3rem;
+         padding-top: 1rem;
+         line-height: 1.2;
+         font-weight: 500;
+       }
+    }
+    table {
+        &.dataTable {
+            thead {
+                .sorting, .sorting_asc, .sorting_desc {
+                    background-image: none;
+                }
+                .table-action-header {
+                    min-width: 7rem;
+                    &.custom-table-action-header {
+                        min-width: 14rem;
+                    }
+                }
+                th {
+                    padding: 8px 10px;
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    color: #ffffff;
+                    &.sorting_asc, &.sorting_desc{
+                        color: #000000;
+                    }
+                }
+                &.custom-thead {
+                    th {
+                        white-space: nowrap;
+                        padding: 0.5rem 1.5rem 0.5rem 0.25rem;
+                    }
+                }
+                &.thead-nowrap {
+                    th {
+                    white-space: nowrap;
+                    }
+                }
+            }
+            tbody {
+                td {
+                    padding: 5px 5px;
+                    font-size: 0.8rem;
+                    .user_list_table_link {
+                        cursor: pointer;
+                        .feather-16 {
+                            height: 0.8rem;
+                            width: 0.8rem;
+                        }
+                    }
+                    span.ng-star-inserted {
+                        margin: 0 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.card {
+    .card-header {
+        &.card-header-filter-list {
+            .input-group {
+                .input-group-text {
+                    padding: 0.25rem 0.625rem;
+                    i-feather {
+                        height: 1.35rem;
+                        width: 1.35rem;
+                    }
+                }
+            }
+            .btn {
+                &.custom-btn {
+                    i-feather {
+                        height: 0.9rem;
+                        width: 0.9rem;
+                        margin-right: 0.25rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.form-fieldset {
+	.ng-select {
+		.ng-select-container {
+			width: 100%;
+	        background-color: transparent; 
+	        line-height: 1.5;
+	        font-size: 14px;
+	        color: #596882;
+	        .ng-value-container {
+	        	.ng-input {
+	        		padding: 0 0.625rem;
+	        	}
+	        	.ng-input>input {
+	        		padding: 0;
+	        	}
+	        }
+		}
+		.ng-dropdown-panel {
+			border: 1px solid #c0ccda;
+	        border-radius: 0;
+	        line-height: 1.5;
+	        padding: 0.46875rem 0.625rem;
+	        font-size: 14px;
+            background-color: #fff;
+		}
+		.ng-select-single .ng-select-container .ng-value-container .ng-input {
+			.ng-select-container {
+				.ng-value-container {
+					.ng-input {
+						padding-left: 0.46875rem;	
+					}
+				}
+			}
+        }
+        &.ng-select-multiple {
+            .ng-select-container {
+                height: auto;
+                min-height: calc(1.5em + 0.9375rem + 2px);
+                max-height: calc(5rem + 0.9375rem + 2px);
+                overflow-y: auto;			
+            }
+        }
+	} 
+}
+
+.feather-icon {
+    height: 0.8rem;
+    width: 0.8rem;
+    &.wd-sm {
+        height: 1rem;
+        width: 1rem;
+    }
+    &.wd-md {
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+    &.wd-lg {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+    &.wd-xl {
+        height: 2rem;
+        width: 2rem;
+    }
+}
+
+.user-list-table {
+    .dataTables_wrapper {
+       .dataTables_length {
+            select {
+                padding: 0.3rem 0.5rem;
+                border-radius: 0.25rem;
+                border: 1px solid rgba(72, 94, 144, 0.3);
+                min-width: 3.5rem;
+            }
+       }
+       .dataTables_paginate {
+         .paginate_button {
+             padding: 0.15rem 0.5rem;
+             &.current {
+                    color: #fff !important;
+                   background-color: #0f70fa;
+                    background: -webkit-gradient( linear, left top, left bottom, from(#0f70fa), to(#0f70fa));
+                    background: linear-gradient(to bottom, #0f70fa 0%, #0f70fa 100%);
+                    border-color: transparent;
+                    &:hover {
+                     color: #fff !important;
+                     background-color: #0f70fa;
+                     background: -webkit-gradient( linear, left top, left bottom, from(#0f70fa), to(#0f70fa));
+                     background: linear-gradient(to bottom, #0f70fa 0%, #0f70fa 100%);
+                 }
+             }
+         }
+       }
+       .dataTables_processing {
+         color: #fff;
+         background-color: #16c4fa;
+         background: linear-gradient( to right, #4bc6ec40 0%, #0168fa 25%, #0168fa 75%, #4bc6ec40 100%);
+         height: 3rem;
+         padding-top: 1rem;
+         line-height: 1.2;
+         font-weight: 500;
+       }
+    }
+    table {
+        &.dataTable {
+            thead {
+                .sorting, .sorting_asc, .sorting_desc {
+                    background-image: none;
+                }
+                .table-action-header {
+                    min-width: 7rem;
+                    &.custom-table-action-header {
+                        min-width: 14rem;
+                    }
+                }
+                th {
+                    padding: 8px 10px;
+                    font-size: 0.9rem;
+                    color: black;
+                }
+                &.custom-thead {
+                    th {
+                    white-space: nowrap;
+                    padding: 0.5rem 1.5rem 0.5rem 0.25rem;
+                    }
+                }
+                &.thead-nowrap {
+                    th {
+                        white-space: nowrap;
+                    }
+                }
+            }
+            tbody {
+                td {
+                    padding: 5px 5px;
+                    font-size: 0.8rem;
+                    .user_list_table_link {
+                        cursor: pointer;
+                        .feather-16 {
+                            height: 0.8rem;
+                            width: 0.8rem;
+                        }
+                    }
+                    span.ng-star-inserted {
+                        margin: 0 0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.invoice-print-section {
+    font-size: 1.35rem;
+    @media(max-width: 1440px) { font-size: 1.15rem; }
+    &.bd-dark, .bd-dark {
+        border-color: $black !important;
+    }
+    .card-title {
+        font-size: 2.75rem;
+        font-weight: 700;
+    }
+    .header-title {
+        font-size: 1.75rem;
+        font-weight: 600;
+        margin-bottom: 0.1rem;
+    }
+    .header-sub-title {
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    .title-info {
+        font-size: 1.5rem;
+        font-weight: 400;
+        &:last-child {
+            margin-bottom: 0.25rem;
+        }
+    }
+    .header-info {
+        font-size: 1.5rem;
+        padding: 0 0.5rem;
+    }
+    .header-info-title {
+        font-size: 1.75rem;
+    }
+    .header-info-text {
+        font-size: 1.5rem;
+    }
+    .sign-img {
+        height: auto;
+        max-height: 3rem;
+        max-width: 100%;
+        &-2x {
+            max-height: 4rem;
+        }
+        &-3x {
+            max-height: 5rem;
+        }
+        &-4x {
+            max-height: 6rem;
+        }
+        &-5x {
+            max-height: 8rem;
+        }
+    }
+    .bank-info {
+        &-title {
+            font-weight: 600;
+            padding-left: 0.5rem;
+            text-align: left;
+            margin-bottom: 0.5rem;
+            white-space: nowrap;
+            @media(max-width: 1440px) { padding-right: 0.25rem; }
+        }
+        &-text {
+            padding-right: 0.5rem;
+            text-align: right;
+            margin-bottom: 0.5rem;
+        }
+    }
+    .table-bordered {
+        border-color: $black;
+        thead th {
+            border: 2px solid $black;
+        }
+        td {
+            border: 2px solid $black;
+        }
+    }
+}
+
+
+.invoice-summary-table {
+    th{
+        padding: 0px!important;
+    }
+    td{
+        padding: 0!important;
+    }
+    td, th{
+        border: 1px solid #000!important;
+        color:#000!important;
+    }
+    :last-child td{
+        border-bottom: none!important;
+    }
+}
+
+
+
