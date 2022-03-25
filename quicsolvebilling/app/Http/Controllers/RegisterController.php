@@ -57,12 +57,11 @@ class RegisterController extends Controller
   
    }
    public function logindata(Request $request){
+       
     $users=new user(); 
     $users->username =$request->username;
+  //  return view("admin.billing.index");
+  return redirect('billing-list');
 
-
-
-   }
-
-
+  }
 }

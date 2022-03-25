@@ -76,7 +76,7 @@
                                     <p class="tx-color-03 tx-16 mg-b-40">Welcome back! Please signin to continue.</p>
                                     <div class="form-group">
                                         <label for="username">Username</label>
-                                        <input type="email"class="form-control"name="email"  placeholder="username" id="username"
+                                        <input type="email"class="form-control"name="username"  placeholder="username" id="username"
                                             required>
                                         <div class="invalid-feedback">Email id is required</div>
                                     </div>
