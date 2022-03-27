@@ -70,68 +70,75 @@
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb breadcrumb-style1 mg-b-10">
                   <li class="breadcrumb-item">
-                    <a href="billing-list">Dashboard</a>
+                    <a href="/admin/dashboard">Dashboard</a>
                   </li>
                   <li class="breadcrumb-item active" aria-current="page">
-                    BILLING INFORMATION
+                  Create Invoice
                   </li>
                 </ol>
               </nav>
             </div>
             <div class="col-12 col-lg-12 col-xl-12 mg-t-10">
-              <form id="create-billing-info-form" class="needs-validation" novalidate method="POST" action="{{url('insert')}}"enctype='multipart/form-data'>
+              <form id="create-billing-info-form" class="needs-validation" method="POST" action="{{url('insert')}}"enctype='multipart/form-data'>
               @csrf
                 <div class="row no-gutters">
                   <div class="col-12 col-sm-12">
                     <div class="pd-10">
                       <fieldset class="form-fieldset mg-b-0">
-                        <legend>Create Billing Information</legend>
+                        <legend>Create Invoice</legend>
                         <div class="row row-sm mg-b-10">
                           <div class="col-12 col-md-4 form-group mg-sm-t-0">
-                            <label for="company_name">Company Name:</label>
-                            <input type="text" class="form-control" placeholder="Company Name" id="company_name" name="company_name" maxlength="45">
+                            <label for="vertical">Vertical:</label>
+                            <input type="text" class="form-control" id="vertical" name="vertical" maxlength="45">
+                         
+                            <div class="invalid-feedback">This is required</div>
+                          </div>
+                          <div class="col-12 col-md-4 form-group mg-sm-t-0">
+                            <label for="claim_Number">Claim Number:</label>
+                            <input type="text" class="form-control" id="claim_Number" name="claim_number" maxlength="45">
+                         
+                            <div class="invalid-feedback">This is required</div>
+                          </div>
+                          <div class="col-12 col-md-4 form-group mg-sm-t-0">
+                            <label for="state_code">State Code:</label>
+                            <input type="text" class="form-control" id="state_code" name="state_code" maxlength="45">
+                         
+                            <div class="invalid-feedback">This is required</div>
+                          </div>
+                        <div class="row row-sm mg-b-10">
+                          <div class="col-12 col-md-4 form-group mg-sm-t-0">
+                            <label for="state">State:</label>
+                            <input type="text" class="form-control" rows="2" name="state_name">
+                            <div class="invalid-feedback">This is required</div>
+                          </div>
                           
-                            <div class="invalid-feedback">This is required</div>
-                          </div>
                           <div class="col-12 col-md-4 form-group mg-sm-t-0">
-                            <label for="invoice_date">Date of Invoice:</label>
-                            <input type="date" class="form-control" placeholder="Date of Invoice" id="invoice_date" name="invoice_date" maxlength="45">
+                            <label for="gstn">Bagic GSTN:</label>
+                            <input type="text" class="form-control" rows="2" name="gst_no">
                             <div class="invalid-feedback">This is required</div>
                           </div>
-                          <div class="col-12 col-md-4 form-group mg-sm-t-0 tx-black">
-                            <label class="d-block" for="upload_file">Upload File:</label>
-                            <input type="file" name="filename" class="d-none"  id="fileUpload" accept=".xls, .xlsx" />
-                            <button type="button" id="fileupload_btn" class="btn btn-primary btn-sm btn-uppercase mr-2">
-
-                              <i class="feather-16 mg-x-5" data-feather="upload"></i>Browse
-                            </button>
-                            <a href="javascript:void(0)" class="font-weight-bold">
-                              <i class="fa fa-download" aria-hidden="true"></i>
-                              <span>Download sample file</span>
-                            </a>
-                            <div class="invalid-feedback">This is required</div>
-                          </div>
-                        </div>
-                        <div class="row row-sm mg-b-10">
+                            
                           <div class="col-12 col-md-4 form-group mg-sm-t-0">
-                            <label for="kind_attn">Kind Attn:</label>
-                            <input type="text" class="form-control"name="kind_attn" rows="2" placeholder="Write Something">
+                            <label for="rate">Rate:</label>
+                            <input type="text" class="form-control" rows="2" name="rate">
                             <div class="invalid-feedback">This is required</div>
                           </div>
-                          <div class="col-12 col-md-2 form-group mg-sm-t-0">
-                            <label for="invoice_date">Invoice Number part 1:</label>
-                            <input type="text" class="form-control"name="invoice_no_part_1" rows="2" placeholder="Invoice Number part 1">
+                            
+                          <div class="col-12 col-md-4 form-group mg-sm-t-0">
+                            <label for="total_invoice_amount">Total_invoice_amount:</label>
+                            <input type="text" class="form-control" rows="2" name="total_invoice_amount">
                             <div class="invalid-feedback">This is required</div>
                           </div>
-                          <div class="col-12 col-md-2 form-group mg-sm-t-0">
-                            <label for="invoice_date">Invoice Number Part 2:</label>
-                            <input type="text" class="form-control"name="invoice_no_part_2" rows="2" placeholder="Invoice Number part 2">
+                          
+                          <div class="col-12 col-md-4 form-group mg-sm-t-0">
+                            <label for="billing_name">Billing Name:</label>
+                            <input type="text" class="form-control"name="billing_name" rows="2" name="billing_name">
                             <div class="invalid-feedback">This is required</div>
                           </div>
-                          <div class="col-12 col-md-2 form-group mg-sm-t-0">
-                            <label for="invoice_date">Invoice Number part 3:</label>
-                            <input type="text" class="form-control"name="invoice_no_part_3" rows="2" placeholder="Invoice Number part 3">
-                              <div class="invalid-feedback">This is required</div>
+                          <div class="col-12 col-md-8 form-group mg-sm-t-0">
+                            <label for="billing_address">Billing Address:</label>
+                            <input type="text" class="form-control"name="billing_address" rows="2" name="billing_address">
+                            <div class="invalid-feedback">This is required</div>
                           </div>
                         </div>
                       </fieldset>
@@ -171,17 +178,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="assets/lib/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="assets/lib/select2/js/select2.min.js"></script>
-    <script src="assets/lib/feather-icons/feather.min.js"></script>
+    <script src="assets/lib/feather-icons/f    eather.min.js"></script>
     <script src="assets/js/billing.js"></script>
     <script src="assets/js/billing.aside.js"></script>
     <script>
       feather.replace()
-      $(document).ready(function(){
-        $('#fileupload_btn').click(function(){
-          $('#fileUpload').trigger('click');
-
-        });
-      });
     </script>
 </body>
 

@@ -58,12 +58,24 @@ class BillingController extends Controller
         //$billingfile->Invoice_Number_part_2= $request->;
         //$billingfile->Invoice_Number_part_3= $request->;
         $billingfile->save();
-      return redirect('billinglist');
+      return redirect('billing-list');
     }
+    public function download(Request $request)
+{
+    $file = public_path(). "assets/uploads/billing.xcl";
+
+    $headers = ['Content-Type: image/jpeg'];
+
+    if (file_exists($file)) {
+        return \Response::download($file, 'plugin.jpg', $headers);
+    } else {
+        echo('File not found.');
+    }
+}
        
     public function view(){
     
-        return view('admin.billing.view');
+        return redirect('view');
     }
 
 

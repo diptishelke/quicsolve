@@ -4,7 +4,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\BillingController ;
-
+use App\Http\Controllers\InvoiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +31,13 @@ Route::get('/billing-list',[BillingController::class,'index']);
 Route::get('/add', [BillingController::class, 'add']);
 Route::post('/insert',[BillingController::class,'insert']);
 Route::get('view',[BillingController::class,'view']);
+Route::get('download',[BillingController::class,'download']);
 
 Route::post('update-/{id}',[BillingController::class,'update']);
-//Route::get('delete/{{$list->rec_id}}',[BillingController::class,'delete']);
+
 Route::get('billing_list/delete/{rec_id}',[BillingController::class,'destroy']);
 
-//Route::get('delete/{rec_id}',[BillingController::class,'delete']);
+
+Route::get('/view',[InvoiceController::class,'index']);
+Route::get('/create', [InvoiceController::class, 'create']);
+Route::post('/insert',[InvoiceController::class,'insert']);

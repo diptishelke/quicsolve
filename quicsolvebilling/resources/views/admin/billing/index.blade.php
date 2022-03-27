@@ -49,7 +49,7 @@
             <div class="ml-auto">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <a href="/" class="nav-link">
+                  <a href="login" class="nav-link">
                     <i class="feather-16 mg-x-5" data-feather="log-out"></i>
                     Logout
                   </a>
@@ -117,7 +117,7 @@
                           <td>{{$list->company_name}}</td>
                           <td>{{$list->kind_attention}}</td>
                           <td>
-                            <a class="user_list_table_link" href="javascript:void(0)" >
+                            <a class="user_list_table_link" href="download" >
                               <i class="feather-16" data-feather="download"></i>
                               <span class="d-none d-sm-inline mg-l-5">Download</span>
                             </a>

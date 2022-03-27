@@ -9,19 +9,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="assets/lib/@fortawesome/fontawesome-free/css/all.min.css">
-  <link rel="stylesheet" href="assets/lib/ionicons/css/ionicons.min.css">
-  <link rel="stylesheet" href="assets/lib/select2/css/select2.min.css">
-  <link rel="stylesheet" href="assets/css/billing.css">
-  <link rel="stylesheet" href="assets/css/pages/auth.css">
-  <link rel="stylesheet" href="assets/css/pages/calendar.css">
-  <link rel="stylesheet" href="assets/css/pages/chat.css">
-  <link rel="stylesheet" href="assets/css/pages/contacts.css">
-  <link rel="stylesheet" href="assets/css/pages/dashboard.css">
-  <link rel="stylesheet" href="assets/css/pages/filemgr.css">
-  <link rel="stylesheet" href="assets/css/pages/landing.css">
-  <link rel="stylesheet" href="assets/css/pages/profile.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="{{URL::asset('assets/lib/@fortawesome/fontawesome-free/css/all.min.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('assets/lib/ionicons/css/ionicons.min.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('assets/lib/select2/css/select2.min.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('assets/css/billing.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('assets/css/pages/auth.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('assets/css/pages/calendar.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('assets/css/pages/chat.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('assets/css/pages/contacts.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('assets/css/pages/dashboard.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('assets/css/pages/filemgr.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('assets/css/pages/landing.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('assets/css/pages/profile.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('assets/css/style.css')}}">
 </head>
 
 <body class="mat-typography">
@@ -31,7 +31,7 @@
       <header class="navbar-menu-wrapper">
         <nav class="navbar navbar-expand-lg navbar-light wd-100p">
           <a href="javascript:void(0)" class="aside-logo bg-white rounded pd-5">
-            <img class="navbar-brand" src="assets/img/logo.png" height="45" alt="QuicSolv" />
+            <img class="navbar-brand" src="{{URL::asset('assets/img/logo.png')}}" height="45" alt="QuicSolv" />
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,7 +50,7 @@
             <div class="ml-auto">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <a href="javascript:void(0)" class="nav-link">
+                  <a href="login" class="nav-link">
                     <i class="feather-16 mg-x-5" data-feather="log-out"></i>
                     Logout
                   </a>
@@ -73,6 +73,13 @@
                   <a routerLink="/admin/dashboard">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">Billing List Information</li>
+                <li class="list-inline-item d-flex align-items-right mg-l-5">
+                <a href="create">
+                    <button type="button" class="btn btn-primary btn-sm btn-uppercase">
+                      Create 
+                    </button>
+                </a>
+                  </li>
               </ol>
             </nav>
           </div>
@@ -111,6 +118,8 @@
                   </li>
                 </ul>
               </div>
+
+              {{session('message')}}
               <div class="card-body pos-relative pd-0">
                 <div class="pd-x-20 pd-y-10">
                   <div class="table-responsive custom-table-list">
@@ -137,23 +146,24 @@
                         </tr>
                       </thead>
                       <tbody>
+                      @foreach($data as $list)
                         <tr>
-                          <td>1</td>
-                          <td>QS1234</td>
-                          <td>Associate Support</td>
-                          <td>OC-22-2416-1871-00000599</td>
-                          <td>2416</td>
-                          <td>27</td>
-                          <td>MAHARASHTRA</td>
-                          <td>27AABCB5730G1ZX</td>
-                          <td>275</td>
-                          <td>-</td>
-                          <td>24.75</td>
-                          <td>24.75</td>
-                          <td>324.5</td>
-                          <td>-</td>
-                          <td>QuicSolv</td>
-                          <td>Pune</td>
+                          <td>{{$list->rec_id}}</td>
+                          <td>{{$list->invoice_no}}</td>
+                          <td>{{$list->vertical}}</td>
+                          <td>{{$list->claim_number}}</td>
+                          <td></td>
+                          <td>{{$list->state_code}}</td>
+                          <td>{{$list->state_name}}</td>
+                          <td>{{$list->gst_no}}</td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td>{{$list->billing_name}}</td>
+                          <td>{{$list->billing_address}}</td>
                           <td>
                             <a class="user_list_table_link" href="javascript:void(0)" data-toggle="modal">
                               <i class="feather-16" data-feather="download"></i>
@@ -161,54 +171,7 @@
                             </a>
                           </td>
                         </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>QS3124</td>
-                          <td>Associate Support</td>
-                          <td>OC-22-1871-2416-00000599</td>
-                          <td>2641</td>
-                          <td>28</td>
-                          <td>MAHARASHTRA</td>
-                          <td>27ABABC5730G1ZX</td>
-                          <td>276</td>
-                          <td>-</td>
-                          <td>23.75</td>
-                          <td>23.75</td>
-                          <td>320.5</td>
-                          <td>-</td>
-                          <td>QuicSolv</td>
-                          <td>Pune</td>
-                          <td>
-                            <a class="user_list_table_link" href="javascript:void(0)" data-toggle="modal">
-                              <i class="feather-16" data-feather="download"></i>
-                              <span class="d-none d-sm-inline mg-l-5">Download</span>
-                            </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>QS2431</td>
-                          <td>Associate Support</td>
-                          <td>OC-22-1187-2641-00000599</td>
-                          <td>2164</td>
-                          <td>38</td>
-                          <td>MAHARASHTRA</td>
-                          <td>27BAABC5730G1ZX</td>
-                          <td>246</td>
-                          <td>-</td>
-                          <td>24.75</td>
-                          <td>24.75</td>
-                          <td>325.5</td>
-                          <td>-</td>
-                          <td>QuicSolv</td>
-                          <td>Pune</td>
-                          <td>
-                            <a class="user_list_table_link" href="javascript:void(0)" data-toggle="modal">
-                              <i class="feather-16" data-feather="download"></i>
-                              <span class="d-none d-sm-inline mg-l-5">Download</span>
-                            </a>
-                          </td>
-                        </tr>
+                        @endforeach 
                       </tbody>
                     </table>
                   </div>
@@ -236,10 +199,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
-  <script src="assets/lib/select2/js/select2.min.js"></script>
-  <script src="assets/lib/feather-icons/feather.min.js"></script>
-  <script src="assets/lib/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-  <script src="assets/js/billing.js"></script>
+  <script src="{{URL::asset('assets/lib/select2/js/select2.min.js')}}"></script>
+  <script src="{{URL::asset('assets/lib/feather-icons/feather.min.js')}}"></script>
+  <script src="{{URL::asset('assets/lib/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
+  <script src="{{URL::asset('assets/js/billing.js')}}"></script>
   <!-- <script src="assets/js/billing.aside.js"></script> -->
   <script>
     feather.replace()
